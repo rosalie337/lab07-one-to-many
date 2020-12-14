@@ -99,21 +99,22 @@ describe('CRUD routes for Book model', () => {
       
     const book = await Book.insert({
       title: 'Between the World and Me',
-      publisher: '1 World',
+      publisher: 'One World',
+      author_id: author.id
     });
       
     const res = await request(app)
       .put(`/api/v1/books/${book.id}`)
       .send({
         id: book.id,
-        title: 'Between the World and Me',
+        title: 'The Beautiful Struggle: A Father, Two Sons, and an Unlikely Road to Manhood',
         publisher: '1 World',
         author_id: author.id
       });
 
     expect(res.body).toEqual({
       id: book.id,
-      title: 'Between the World and Me',
+      title: 'The Beautiful Struggle: A Father, Two Sons, and an Unlikely Road to Manhood',
       publisher: 'One World',
       author_id: author.id
     });
