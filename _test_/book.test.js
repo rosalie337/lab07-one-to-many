@@ -108,7 +108,7 @@ describe('CRUD routes for Book model', () => {
       .send({
         id: book.id,
         title: 'The Beautiful Struggle: A Father, Two Sons, and an Unlikely Road to Manhood',
-        publisher: '1 World',
+        publisher: 'One World',
         author_id: author.id
       });
 
