@@ -106,14 +106,13 @@ describe('CRUD routes for Book model', () => {
     const res = await request(app)
       .put(`/api/v1/books/${book.id}`)
       .send({
-        id: book.id,
         title: 'The Beautiful Struggle: A Father, Two Sons, and an Unlikely Road to Manhood',
         publisher: 'One World',
         author_id: author.id
       });
 
     expect(res.body).toEqual({
-      id: book.id,
+      id: '1',
       title: 'The Beautiful Struggle: A Father, Two Sons, and an Unlikely Road to Manhood',
       publisher: 'One World',
       author_id: author.id
