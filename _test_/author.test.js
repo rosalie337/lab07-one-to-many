@@ -55,7 +55,7 @@ describe('CRUD routes for Authors model', () => {
     expect(res.body).toHaveLength(authors.length);
   });
 
-  it.only('Finds an author by id and associated books via GET', async() => {
+  it('Finds an author by id and associated books via GET', async() => {
     const author = await Author.insert({
       name: 'Ta-Nehisi Coates',
       genre: 'Non-fiction'
